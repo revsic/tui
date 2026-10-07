@@ -1,2 +1,2 @@
-# vim-setting
-Custom vim configuration
+# tui
+Custom TUI configuration

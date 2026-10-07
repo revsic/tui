@@ -1,7 +1,0 @@
-[submodule "vim-cpp-modern"]
-	path = vim-cpp-modern
-	url = https://github.com/bfrg/vim-cpp-modern
-
-[submodule "jellybeans.vim"]
-	path = jellybeans.vim
-	url = https://github.com/nanotech/jellybeans.vim
