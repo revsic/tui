@@ -2,16 +2,15 @@ mkdir ~/.local/bin
 echo 'export PATH=$HOME/.local/bin:$PATH' >>~/.bashrc
 . ~/.bashrc
 
-apt update && apt install -y curl git
+apt update && apt install -y curl git golang-go
+
+# install agents
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+curl -fsSL https://claude.ai/install.sh | bash
 
 # workspace
 mkdir -p /tmp/downloads
 pushd /tmp/downloads
-
-# # install zellij
-# curl -LO https://github.com/zellij-org/zellij/releases/latest/download/zellij-x86_64-unknown-linux-musl.tar.gz
-# tar xvfz zellij-x86_64-unknown-linux-musl.tar.gz
-# mv zellij ~/.local/bin
 
 # install herdr
 curl -fsSL https://herdr.dev/install.sh | sh
@@ -41,6 +40,9 @@ echo 'export PATH=$HOME/.local/nvim-linux-x86_64/bin:$PATH' >>~/.bashrc
 # install lazyvim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
+
+# install lazygit
+GOBIN=$HOME/.local/bin go install github.com/jesseduffield/lazygit@latest
 
 # cleanup
 popd
