@@ -40,6 +40,38 @@ echo 'export PATH=$HOME/.local/nvim-linux-x86_64/bin:$PATH' >>~/.bashrc
 # install lazyvim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
+cat <<EOF >~/.config/nvim/lazyvim.json
+{
+  "extras": [
+    "lazyvim.plugins.extras.editor.fzf",
+    "lazyvim.plugins.extras.lang.json",
+    "lazyvim.plugins.extras.lang.markdown",
+    "lazyvim.plugins.extras.lang.python",
+    "lazyvim.plugins.extras.lang.toml"
+  ],
+  "install_version": 8,
+  "news": {
+    "NEWS.md": "11866"
+  },
+  "version": 8
+}
+EOF
+cat <<EOF >~/.config/nvim/lua/plugins/diffview.lua
+return {
+  {
+    "sindrets/diffview.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory" },
+    keys = {
+      {
+        "<leader>gV",
+        "<cmd>DiffviewOpen<cr>",
+        desc = "Open Git Diff View",
+      },
+    },
+  },
+}
+EOF
 
 # install lazygit
 GOBIN=$HOME/.local/bin go install github.com/jesseduffield/lazygit@latest
