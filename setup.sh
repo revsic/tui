@@ -2,7 +2,7 @@ mkdir ~/.local/bin
 echo 'export PATH=$HOME/.local/bin:$PATH' >>~/.bashrc
 . ~/.bashrc
 
-apt update && apt install -y curl git golang-go
+apt update && apt install -y curl git golang-go fzf
 
 # install agents
 curl -fsSL https://chatgpt.com/codex/install.sh | sh
