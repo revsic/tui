@@ -4,6 +4,9 @@ echo 'export PATH=$HOME/.local/bin:$PATH' >>~/.bashrc
 
 apt update && apt install -y curl git golang-go fzf
 
+# install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 # install agents
 curl -fsSL https://chatgpt.com/codex/install.sh | sh
 curl -fsSL https://claude.ai/install.sh | bash
